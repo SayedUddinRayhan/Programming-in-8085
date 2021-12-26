@@ -1,0 +1,7 @@
+LXI H, 1001H    ; "Get address of first 8-bit number in H-L pair."
+MOV A, M        ; "Get first number in accumulator"  
+INX H               ; "H-L points 1002H"  
+ADD M             ; "Add first and second 8-bit number"  
+INX H               ; "H-L points 1003H"  
+MOV M, A       ; "Store result at 1003H"  
+HLT                  ; "Terminate the program"  
