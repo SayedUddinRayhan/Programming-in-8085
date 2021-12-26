@@ -1,0 +1,8 @@
+LXI H, 1001H     ; "Get address of first number in H-L pair"
+MOV A, M	     ; "Get first number in accumulator"
+INX H	         ; "Get address of second number in H-L pair"
+CMP M	         ; "Compare second number with first number"
+JC AHEAD	     ; "Yes, smaller number is in accumulator. Go to AHEAD"
+MOV A, M	     ; "No, get 2nd number in the accumulator"
+AHEAD: STA 1003H ; "Store smaller number in 1003H"
+HLT	             ; "Terminate the program"
